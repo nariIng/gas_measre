@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyseur PBM</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="icons/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <div class="content container my-0 py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <img src="images/logo-ecole.png" alt="Logo Ecole" class="img-fluid" style="height: 80px;">
+      <h1 class="text-center text-color mb-0">Analyseur PBM</h1>
+      <img src="images/logo-departement.png" alt="Logo Département" class="img-fluid" style="height: 80px;">
+    </div>
+
+    <div class="card mb-4 shadow-lg">
+      <div class="card-header text-white" style="background: linear-gradient(to right, #8a2d94, #b10b6c);">
+        <h2 class="mb-0">Entrées de donnée</h2>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-12 mb-3">
+            <form id="titration-form">               
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <label for="titrant-volume" class="form-label">Nom de la matière organique</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-droplet-half"></i></span>
+                        <input type="text" class="form-control" id="titrant-volume" step="1" placeholder="Nom de la matière organique" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <label for="titrand-volume" class="form-label">Masse de la matière organique (Kg)</label>
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-water"></i></span>
+                        <input type="number" class="form-control" id="titrand-volume" step="1" placeholder="Masse en Kg" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-grid">
+                    <button type="button" onclick="sendMessage(event)" class="btn btn-color text-white btn-lg">Commencer</button>
+                </div>
+            </form>
+          </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mb-4">
+        <div class="card border-0 shadow-lg">
+          <div class="card-header text-white" style="background: linear-gradient(to right, #8a2d94, #b10b6c);">
+            <h2 class="mb-0">Courbe de production</h2>
+          </div>
+          <div class="card-body text-center">
+            <canvas id="titration-curve"width="400" height="200"></canvas>
+            <div class="text-center d-grid">
+              <button type="button" onclick="end_titre()" class="btn btn-color text-white btn-lg">Arreter</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+      <!-- Footer Stylisé -->
+    <footer class="footer bg-dark text-white text-center pt-3 mt-5 shadow-lg">
+      <p class="mb-0">
+        <small>
+          <i class="bi bi-file-earmark-text"></i> Mémoire d'Ingéniorat de <strong>Rakotoarinjara Harilanto</strong>
+        </small>
+      </p>
+      <p class="mb-0">
+        <small>© 2025 copy right Narindranjanahary Emmanuela</small>
+      </p>
+    </footer>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="js/chart.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
