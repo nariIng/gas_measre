@@ -68,6 +68,10 @@ function dPhGraphique(poids, temps) {
     }
 }
 
+function start_test() {
+    fetch(`/start_test?text=${titre}`);
+}
+
 function start_titre() {
     titre = 1;
     fetch(`/start_receiv?text=${titre}`);
@@ -114,6 +118,11 @@ async function sendMessage(event) {
     } catch (error) {
         console.error('Erreur lors du commencement:', error);
     }
+}
+
+async function test(event) {
+    event.preventDefault();
+    start_test();
 }
 
 setInterval(fetch_poids, 1000);

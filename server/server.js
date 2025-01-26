@@ -43,6 +43,16 @@ app.get('/start', async (req, res) => {
     }
 });
 
+app.get('/start_test', async (req, res) => {
+    try {
+        await axiosInstance.get('http://192.168.4.1/start_test');
+        res.send('Message envoyé');
+    }
+    catch (error){
+        res.status(500).send('erreur du test');
+    }
+})
+
 app.get('/poids', async (req, res) => {
     try {
         const response = await axiosInstance.get('http://192.168.4.1/poids');
